@@ -23,18 +23,22 @@ body {
   background: var(--white);
   color: var(--text-dark);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Improve tap targets on mobile */
+button, a { min-height: 44px; }
+
+img { max-width: 100%; height: auto; }
 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-
 @keyframes slideUp {
   from { transform: translateY(40px); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
