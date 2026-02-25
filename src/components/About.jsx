@@ -1,0 +1,72 @@
+const skills = [
+  'Java','Spring Boot','Kafka','GraphQL','React.js','Angular','Node.js',
+  'AWS','Kubernetes','Docker','Go','PostgreSQL','Redis','MongoDB','Python','TypeScript'
+]
+
+const cardDetails = [
+  { icon: '📍', text: 'Dallas, TX' },
+  { icon: '📧', text: 'cbhanu12dec@gmail.com' },
+  { icon: '📞', text: '(838) 910-9856' },
+  { icon: '🎓', text: 'M.S. Computer Science, SUNY Albany' },
+  { icon: '💼', text: 'Open to opportunities' },
+]
+
+export default function About() {
+  return (
+    <section id="about" style={{ padding:'7rem 6%', background:'var(--white)' }}>
+      <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:'5rem', alignItems:'center' }}>
+        {/* Left */}
+        <div>
+          <div style={{ fontSize:'.75rem', fontWeight:700, letterSpacing:2, textTransform:'uppercase', color:'var(--blue-600)', marginBottom:'.8rem' }}>About Me</div>
+          <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize:'clamp(2rem, 3.5vw, 3rem)', fontWeight:900, color:'var(--text-dark)', lineHeight:1.15 }}>
+            Crafting systems that scale, perform &amp; endure
+          </h2>
+          <div style={{ width:48, height:3, background:'linear-gradient(90deg, var(--blue-500), var(--blue-300))', borderRadius:2, margin:'1.2rem 0 2.5rem' }} />
+          <p style={{ color:'var(--text-mid)', lineHeight:1.85, marginBottom:'1rem' }}>
+            Software Engineer with expertise in Java, Spring Boot, microservices, GraphQL, Kafka, and Angular/React. Strong background in designing event-driven architectures and cloud-native platforms for high-traffic production environments.
+          </p>
+          <p style={{ color:'var(--text-mid)', lineHeight:1.85 }}>
+            Proven ability to apply data structures and algorithms to performance-critical workflows while automating CI/CD pipelines. Experienced in technical leadership and cross-team collaboration with product, frontend, QA, and DevOps teams.
+          </p>
+          <div style={{ display:'flex', flexWrap:'wrap', gap:'.6rem', marginTop:'1.8rem' }}>
+            {skills.map(s => (
+              <SkillTag key={s}>{s}</SkillTag>
+            ))}
+          </div>
+        </div>
+
+        {/* Right — Card */}
+        <div>
+          <div style={{
+            background:'linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%)',
+            borderRadius:20, padding:'2.5rem', color:'white',
+            position:'relative', overflow:'hidden',
+            boxShadow:'0 20px 60px rgba(37,99,235,.25)',
+          }}>
+            <div style={{ position:'absolute', top:-40, right:-40, width:200, height:200, borderRadius:'50%', background:'rgba(255,255,255,.08)' }} />
+            <div style={{ fontFamily:"'Playfair Display', serif", fontSize:'1.7rem', fontWeight:900, marginBottom:'.3rem' }}>Bhanu Cheryala</div>
+            <div style={{ fontSize:'.9rem', opacity:.8, marginBottom:'2rem' }}>Senior Software Engineer @ T-Mobile</div>
+            {cardDetails.map(({ icon, text }) => (
+              <div key={text} style={{ display:'flex', alignItems:'center', gap:'.8rem', marginBottom:'1rem', fontSize:'.88rem' }}>
+                <div style={{ width:32, height:32, background:'rgba(255,255,255,.15)', borderRadius:8, display:'flex', alignItems:'center', justifyContent:'center' }}>{icon}</div>
+                <span>{text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function SkillTag({ children }) {
+  return (
+    <span style={{
+      background:'var(--blue-50)', border:'1px solid var(--blue-100)',
+      color:'var(--blue-700)', padding:'.4rem .9rem', borderRadius:6,
+      fontSize:'.8rem', fontWeight:600, cursor:'default',
+    }}>
+      {children}
+    </span>
+  )
+}
