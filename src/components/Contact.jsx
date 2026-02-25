@@ -14,15 +14,19 @@ export default function Contact() {
   return (
     <section id="contact" style={{
       padding: isMobile ? '5rem 5%' : '7rem 6%',
-      background:'linear-gradient(135deg, var(--blue-700) 0%, var(--blue-900) 100%)',
+      background:'#111',
       color:'white', textAlign:'center', position:'relative', overflow:'hidden'
     }}>
-      <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px)', backgroundSize:'60px 60px' }} />
+      {/* Grid pattern */}
+      <div style={{ position:'absolute', inset:0, backgroundImage:'linear-gradient(rgba(232,83,58,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(232,83,58,.03) 1px, transparent 1px)', backgroundSize:'60px 60px' }} />
+      {/* Top accent line */}
+      <div style={{ position:'absolute', top:0, left:0, right:0, height:'3px', background:'linear-gradient(90deg, transparent, #e8533a 40%, transparent)' }} />
 
       <div style={{ position:'relative', zIndex:2 }}>
-        <div style={{ fontSize:'.75rem', fontWeight:700, letterSpacing:2, textTransform:'uppercase', color:'#bfdbfe', marginBottom:'.8rem' }}>Let's Connect</div>
-        <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize: isMobile ? 'clamp(1.8rem, 7vw, 2.5rem)' : 'clamp(2rem, 3.5vw, 3rem)', fontWeight:900, color:'white', lineHeight:1.15 }}>Get in Touch</h2>
-        <p style={{ color:'rgba(255,255,255,.7)', marginTop:'1rem', maxWidth:480, marginInline:'auto', lineHeight:1.7, fontSize: isMobile ? '.92rem' : '1rem' }}>
+        <div style={{ fontSize:'.75rem', fontWeight:700, letterSpacing:2, textTransform:'uppercase', color:'#e8533a', marginBottom:'.8rem' }}>Let's Connect</div>
+        <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize: isMobile ? 'clamp(1.8rem, 7vw, 2.5rem)' : 'clamp(2rem, 3.5vw, 3rem)', fontWeight:900, color:'#fff', lineHeight:1.15 }}>Get in Touch</h2>
+        <div style={{ width:48, height:3, background:'linear-gradient(90deg, #e8533a, #c0392b)', borderRadius:2, margin:'1.2rem auto 1rem' }} />
+        <p style={{ color:'#888', marginTop:'1rem', maxWidth:480, marginInline:'auto', lineHeight:1.7, fontSize: isMobile ? '.92rem' : '1rem' }}>
           Open to exciting opportunities in backend, full-stack, or distributed systems engineering. Reach out — I'd love to talk.
         </p>
 
@@ -50,13 +54,13 @@ function ContactLink({ href, target, children, isMobile }) {
       style={{
         display:'flex', alignItems:'center', justifyContent: isMobile ? 'center' : 'flex-start',
         gap:'.65rem',
-        background: hovered ? 'rgba(255,255,255,.22)' : 'rgba(255,255,255,.12)',
-        backdropFilter:'blur(8px)', border:'1px solid rgba(255,255,255,.2)',
-        color:'white', textDecoration:'none',
+        background: hovered ? 'rgba(232,83,58,0.2)' : 'rgba(232,83,58,0.08)',
+        border:`1px solid ${hovered ? 'rgba(232,83,58,0.6)' : 'rgba(232,83,58,0.2)'}`,
+        color: hovered ? '#fff' : '#ccc', textDecoration:'none',
         padding: isMobile ? '.9rem 1.2rem' : '.85rem 1.6rem', borderRadius:10,
         fontSize: isMobile ? '.9rem' : '.88rem', fontWeight:500,
         transform: hovered ? 'translateY(-2px)' : 'none',
-        transition:'background .2s, transform .2s'
+        transition:'all .2s'
       }}>
       {children}
     </a>

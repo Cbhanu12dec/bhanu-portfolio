@@ -51,13 +51,13 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="experience" style={{ padding: isMobile ? '5rem 5%' : '7rem 6%', background:'var(--off-white)' }}>
-      <div style={{ fontSize:'.75rem', fontWeight:700, letterSpacing:2, textTransform:'uppercase', color:'var(--blue-600)', marginBottom:'.8rem' }}>Career</div>
-      <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize: isMobile ? 'clamp(1.8rem, 7vw, 2.5rem)' : 'clamp(2rem, 3.5vw, 3rem)', fontWeight:900, color:'var(--text-dark)', lineHeight:1.15 }}>Experience</h2>
-      <div style={{ width:48, height:3, background:'linear-gradient(90deg, var(--blue-500), var(--blue-300))', borderRadius:2, margin:'1.2rem 0 2.5rem' }} />
+    <section id="experience" style={{ padding: isMobile ? '5rem 5%' : '7rem 6%', background:'#141414' }}>
+      <div style={{ fontSize:'.75rem', fontWeight:700, letterSpacing:2, textTransform:'uppercase', color:'#e8533a', marginBottom:'.8rem' }}>Career</div>
+      <h2 style={{ fontFamily:"'Playfair Display', serif", fontSize: isMobile ? 'clamp(1.8rem, 7vw, 2.5rem)' : 'clamp(2rem, 3.5vw, 3rem)', fontWeight:900, color:'#fff', lineHeight:1.15 }}>Experience</h2>
+      <div style={{ width:48, height:3, background:'linear-gradient(90deg, #e8533a, #c0392b)', borderRadius:2, margin:'1.2rem 0 2.5rem' }} />
 
       <div style={{ position:'relative', paddingLeft: isMobile ? '1.5rem' : '2rem' }}>
-        <div style={{ position:'absolute', left:0, top:8, bottom:8, width:2, background:'linear-gradient(180deg, var(--blue-500) 0%, var(--blue-200) 100%)', borderRadius:2 }} />
+        <div style={{ position:'absolute', left:0, top:8, bottom:8, width:2, background:'linear-gradient(180deg, #e8533a 0%, rgba(232,83,58,0.2) 100%)', borderRadius:2 }} />
 
         {jobs.map((job, i) => (
           <div key={i} ref={el => itemRefs.current[i] = el} style={{
@@ -65,21 +65,21 @@ export default function Experience() {
             paddingLeft: isMobile ? '1.5rem' : '2rem',
             opacity:0, transform:'translateY(30px)', transition:'opacity .6s, transform .6s',
           }}>
-            <div style={{ position:'absolute', left: isMobile ? '-1.85rem' : '-2.4rem', top:'.35rem', width:13, height:13, borderRadius:'50%', background:'var(--blue-600)', border:'3px solid white', boxShadow:'0 0 0 2px var(--blue-400)' }} />
+            <div style={{ position:'absolute', left: isMobile ? '-1.85rem' : '-2.4rem', top:'.35rem', width:13, height:13, borderRadius:'50%', background:'#e8533a', border:'3px solid #141414', boxShadow:'0 0 0 2px rgba(232,83,58,0.4)' }} />
 
             <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', flexWrap:'wrap', gap:'.4rem', marginBottom:'.5rem' }}>
               <div>
-                <div style={{ fontFamily:"'Playfair Display', serif", fontSize: isMobile ? '1.1rem' : '1.3rem', fontWeight:700, color:'var(--text-dark)' }}>{job.title}</div>
-                <div style={{ color:'var(--blue-600)', fontWeight:600, fontSize: isMobile ? '.88rem' : '.95rem' }}>{job.company}</div>
-                <div style={{ color:'var(--text-light)', fontSize:'.8rem', marginTop:'.1rem' }}>{job.location} · {job.date}</div>
+                <div style={{ fontFamily:"'Playfair Display', serif", fontSize: isMobile ? '1.1rem' : '1.3rem', fontWeight:700, color:'#fff' }}>{job.title}</div>
+                <div style={{ color:'#e8533a', fontWeight:600, fontSize: isMobile ? '.88rem' : '.95rem' }}>{job.company}</div>
+                <div style={{ color:'#666', fontSize:'.8rem', marginTop:'.1rem' }}>{job.location} · {job.date}</div>
               </div>
-              <span style={{ background:'var(--blue-50)', border:'1px solid var(--blue-100)', color:'var(--blue-700)', padding:'.2rem .65rem', borderRadius:100, fontSize:'.72rem', fontWeight:600, whiteSpace:'nowrap', height:'fit-content' }}>{job.badge}</span>
+              <span style={{ background:'rgba(232,83,58,0.12)', border:'1px solid rgba(232,83,58,0.25)', color:'#e8533a', padding:'.2rem .65rem', borderRadius:100, fontSize:'.72rem', fontWeight:600, whiteSpace:'nowrap', height:'fit-content' }}>{job.badge}</span>
             </div>
 
             <ul style={{ listStyle:'none' }}>
               {job.bullets.map((b, j) => (
-                <li key={j} style={{ position:'relative', paddingLeft:'1.1rem', color:'var(--text-mid)', fontSize: isMobile ? '.83rem' : '.88rem', lineHeight:1.7, marginBottom:'.5rem' }}>
-                  <span style={{ position:'absolute', left:0, color:'var(--blue-500)', fontWeight:700 }}>→</span>{b}
+                <li key={j} style={{ position:'relative', paddingLeft:'1.1rem', color:'#aaa', fontSize: isMobile ? '.83rem' : '.88rem', lineHeight:1.7, marginBottom:'.5rem' }}>
+                  <span style={{ position:'absolute', left:0, color:'#e8533a', fontWeight:700 }}>→</span>{b}
                 </li>
               ))}
             </ul>

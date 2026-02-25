@@ -36,15 +36,15 @@ export default function Navbar() {
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
         padding: isMobile ? '1rem 5%' : '1.2rem 6%',
-        background: 'rgba(255,255,255,0.92)',
+        background: 'rgba(20,20,20,0.92)',
         backdropFilter: 'blur(14px)',
-        borderBottom: '1px solid rgba(59,130,246,0.1)',
-        boxShadow: scrolled ? '0 4px 24px rgba(37,99,235,0.08)' : 'none',
+        borderBottom: '1px solid rgba(232,83,58,0.15)',
+        boxShadow: scrolled ? '0 4px 24px rgba(0,0,0,0.4)' : 'none',
         transition: 'box-shadow 0.3s',
       }}>
         <div style={{
           fontFamily: "'Playfair Display', serif", fontSize: '1.5rem', fontWeight: 900,
-          color: 'var(--blue-700)', letterSpacing: '-0.5px', cursor: 'pointer', zIndex: 101,
+          color: '#e8533a', letterSpacing: '-0.5px', cursor: 'pointer', zIndex: 101,
         }} onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setMenuOpen(false) }}>
           BC.
         </div>
@@ -56,7 +56,7 @@ export default function Navbar() {
                 <button onClick={() => scrollTo(id)} style={{
                   background: 'none', border: 'none', cursor: 'pointer',
                   fontSize: '.88rem', fontWeight: active === id ? 600 : 500,
-                  color: active === id ? 'var(--blue-600)' : 'var(--text-mid)',
+                  color: active === id ? '#e8533a' : '#aaa',
                   letterSpacing: '.4px', textTransform: 'capitalize',
                   transition: 'color .2s', fontFamily: "'DM Sans', sans-serif",
                 }}>
@@ -75,7 +75,7 @@ export default function Navbar() {
             {[0,1,2].map(i => (
               <span key={i} style={{
                 display: 'block', width: 24, height: 2,
-                background: 'var(--blue-700)', borderRadius: 2,
+                background: '#e8533a', borderRadius: 2,
                 transform: menuOpen
                   ? i === 0 ? 'rotate(45deg) translate(5px, 5px)'
                   : i === 2 ? 'rotate(-45deg) translate(5px, -5px)' : 'none'
@@ -91,7 +91,7 @@ export default function Navbar() {
       {/* Mobile full-screen drawer */}
       <div style={{
         position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, zIndex: 99,
-        background: 'rgba(255,255,255,0.98)', backdropFilter: 'blur(20px)',
+        background: 'rgba(20,20,20,0.98)', backdropFilter: 'blur(20px)',
         display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2rem',
         transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
         transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)',
@@ -102,7 +102,7 @@ export default function Navbar() {
             background: 'none', border: 'none', cursor: 'pointer',
             fontSize: '1.8rem', fontWeight: 700,
             fontFamily: "'Playfair Display', serif",
-            color: active === id ? 'var(--blue-600)' : 'var(--text-dark)',
+            color: active === id ? '#e8533a' : '#fff',
             opacity: menuOpen ? 1 : 0,
             transform: menuOpen ? 'translateY(0)' : 'translateY(20px)',
             transition: `opacity 0.3s ${i * 0.06}s, transform 0.3s ${i * 0.06}s`,

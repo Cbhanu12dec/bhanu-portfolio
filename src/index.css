@@ -1,18 +1,17 @@
 :root {
-  --white: #ffffff;
-  --off-white: #f8faff;
-  --blue-50: #eff6ff;
-  --blue-100: #dbeafe;
-  --blue-200: #bfdbfe;
-  --blue-300: #93c5fd;
-  --blue-400: #60a5fa;
-  --blue-500: #3b82f6;
-  --blue-600: #2563eb;
-  --blue-700: #1d4ed8;
-  --blue-900: #1e3a8a;
-  --text-dark: #0f172a;
-  --text-mid: #334155;
-  --text-light: #64748b;
+  --bg-dark: #141414;
+  --bg-darker: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --bg-card2: #202020;
+  --coral: #e8533a;
+  --coral-dark: #c0392b;
+  --coral-dim: rgba(232,83,58,0.12);
+  --text-white: #ffffff;
+  --text-light: #cccccc;
+  --text-mid: #999999;
+  --text-dim: #666666;
+  --border: #2a2a2a;
+  --border-light: #333333;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,15 +19,13 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--white);
-  color: var(--text-dark);
+  background: var(--bg-dark);
+  color: var(--text-white);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Improve tap targets on mobile */
 button, a { min-height: 44px; }
-
 img { max-width: 100%; height: auto; }
 
 @keyframes fadeUp {
@@ -42,4 +39,8 @@ img { max-width: 100%; height: auto; }
 @keyframes slideUp {
   from { transform: translateY(40px); opacity: 0; }
   to   { transform: translateY(0); opacity: 1; }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }

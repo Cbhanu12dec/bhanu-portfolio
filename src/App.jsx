@@ -17,7 +17,9 @@ export default function App() {
       <Education />
       <Contact />
       <footer style={{
-        background:'var(--blue-900)', color:'rgba(255,255,255,.5)',
+        background:'#0f0f0f',
+        borderTop:'1px solid #1e1e1e',
+        color:'#444',
         textAlign:'center', padding:'1.8rem 6%', fontSize:'.8rem'
       }}>
         © 2025 Bhanu Cheryala · Built with precision &amp; passion
